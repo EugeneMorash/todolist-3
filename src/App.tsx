@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Todolist3} from "./components/Todolist3";
 
-
-
+export type ScheduleArrType = Array<ScheduleType>
+export type ScheduleType = {
+    id: number
+    item: string
+    isDone: boolean
+}
 
 const schedule: ScheduleArrType = [
     {id: 101, item: "Waking up", isDone: true},
@@ -21,9 +25,18 @@ const schedule: ScheduleArrType = [
 ]
 
 function App() {
+
+    const [item, setItem] = useState(schedule)
+
+    const deleteItem = (id: number) => {
+        setItem(item.filter(itm => itm.id !== id))
+    }
+
+
+
   return (
     <div>
-        <Todolist3 />
+        <Todolist3 itemList={item} deleteItem={deleteItem}/>
     </div>
   );
 }
