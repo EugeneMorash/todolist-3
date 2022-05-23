@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Todolist3} from "./components/Todolist3";
+
+
+
+
+const schedule: ScheduleArrType = [
+    {id: 101, item: "Waking up", isDone: true},
+    {id: 102, item: "Exercise", isDone: false},
+    {id: 103, item: "Washing", isDone: false},
+    {id: 104, item: "Breakfast", isDone: true},
+    {id: 105, item: "Lazy time", isDone: true},
+    {id: 106, item: "Lunch", isDone: true},
+    {id: 107, item: "Horse racing", isDone: false},
+    {id: 108, item: "Afternoon tea", isDone: true},
+    {id: 109, item: "Snooker", isDone: true},
+    {id: 110, item: "Dinner", isDone: true},
+    {id: 111, item: "Cigar time", isDone: true},
+    {id: 112, item: "Washing", isDone: false},
+    {id: 113, item: "Putting to bed", isDone: true}
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <Todolist3 />
     </div>
   );
 }
